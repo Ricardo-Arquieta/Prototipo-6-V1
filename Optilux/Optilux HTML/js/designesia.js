@@ -1773,5 +1773,25 @@
         });
         grid_gallery();
     });
-    
+   
  })(jQuery);
+
+ /* ====== OCULTAR BOTÓN WHATSAPP AL LLEGAR AL FOOTER ====== */
+(function() {
+    var btn = document.getElementById('whatsapp-float');
+    var footer = document.querySelector('footer');
+    if (btn && footer) {
+        window.addEventListener('scroll', function() {
+            var footerTop = footer.getBoundingClientRect().top;
+            var windowHeight = window.innerHeight;
+            // Si el footer está visible en la ventana, ocultar el botón
+            if (footerTop < windowHeight) {
+                btn.style.opacity = '0';
+                btn.style.pointerEvents = 'none';
+            } else {
+                btn.style.opacity = '1';
+                btn.style.pointerEvents = 'auto';
+            }
+        });
+    }
+})();
