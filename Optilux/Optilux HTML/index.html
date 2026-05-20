@@ -437,9 +437,9 @@
             </section>
 
             <!-- =====SECCIÓN DE FORMULARIO Y CALENDARIO==== -->
-            <section>
+            <section id="formulario-contacto">
                 <div class="container">
-                    <div class="row g-4">
+                    <div class="row g-4 align-items-stretch">
                         <div class="col-lg-6">
                             <div class="subtitle s2 mb-3">Contáctanos</div>
                             <h2 class="split mb-4">Envíanos tu mensaje</h2>
@@ -466,6 +466,7 @@
                                         <input type="tel" class="form-control" id="telefono" name="telefono" placeholder="+52 000 000 0000" required>
                                     </div>
 
+                                    
                                     <div class="col-12">
                                         <label for="motivo" class="form-label">Motivo de consulta</label>
                                         <select class="form-select" id="motivo" name="motivo" required>
@@ -485,7 +486,28 @@
                                 </div>
                             </form>
                         </div>
-                        <!-- ====Calendario de Citas=== -->
+                                                <div class="col-lg-6">
+                            <div class="subtitle s2 mb-3">Agenda tu cita</div>
+                            <h2 class="split mb-4">Selecciona día y hora</h2>
+
+                            <!-- Selector de fecha -->
+                            <div class="mb-3">
+                                <label for="fecha-cita" class="form-label">Fecha</label>
+                                <input type="date" id="fecha-cita" class="form-control" required>
+                            </div>
+
+                            <!-- Selector de hora (se llenará dinámicamente) -->
+                            <div class="mb-4">
+                                <label for="hora-cita" class="form-label">Horario disponible</label>
+                                <select id="hora-cita" class="form-select" required disabled>
+                                    <option value="">Selecciona una fecha primero</option>
+                                </select>
+                            </div>
+
+                            <!-- Botón que redirige al sistema externo -->
+                            <a id="btn-agendar" class="btn-main fx-slide" href="#" target="_blank" rel="noopener"><span>Agendar cita</span></a>
+                            <small class="d-block mt-2 text-muted">Serás redirigido a nuestro sistema de citas para confirmar disponibilidad.</small>
+                        </div>
                         
                     </div>
                 </div>
