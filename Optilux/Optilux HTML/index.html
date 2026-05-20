@@ -436,15 +436,56 @@
                 </div>
             </section>
 
+            <!-- =====SECCIÓN DE FORMULARIO Y CALENDARIO==== -->
             <section>
                 <div class="container">
                     <div class="row g-4">
                         <div class="col-lg-6">
-                            <div class="subtitle id-color">FAQ</div>
-                            <h2 class="split">
-                                Everything You Should Know About Eye Care
-                            </h2>
+                            <div class="subtitle s2 mb-3">Contáctanos</div>
+                            <h2 class="split mb-4">Envíanos tu mensaje</h2>
+                            
+                            <form action="#" method="POST" class="contact-form">
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label for="nombre" class="form-label">Nombre(s)</label>
+                                        <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Tu nombre(s)" required>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <label for="apellido" class="form-label">Apellidos</label>
+                                        <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Tus apellido(s)" required>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <label for="email" class="form-label">Correo Electrónico</label>
+                                        <input type="email" class="form-control" id="email" name="email" placeholder="correo@ejemplo.com" required>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <label for="telefono" class="form-label">Número de contacto</label>
+                                        <input type="tel" class="form-control" id="telefono" name="telefono" placeholder="+52 000 000 0000" required>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <label for="motivo" class="form-label">Motivo de consulta</label>
+                                        <select class="form-select" id="motivo" name="motivo" required>
+                                            <option value="" selected disabled>Selecciona una opción</option>
+                                            <option value="diabetes">Diabetes y control glucémico</option>
+                                            <option value="insulina">Resistencia a la insulina</option>
+                                            <option value="dislipidemias">Dislipidemias (colesterol / triglicéridos)</option>
+                                            <option value="sindrome-metabolico">Síndrome metabólico</option>
+                                            <option value="enfermedad-renal">Enfermedad renal crónica</option>
+                                            <option value="preoperatoria">Evaluación preoperatoria</option>
+                                            <option value="hipertension">Hipertensión arterial</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-12">
+                                        <button type="submit" class="btn-main fx-slide"><span>Enviar mensaje</span></button>
+                                    </div>
+                                </div>
+                            </form>
                         </div>
+                        <!-- ====Calendario de Citas=== -->
                         <div class="col-lg-6">
                             <div class="de-tab">
                                 <ul class="d-tab-nav mb-4">
