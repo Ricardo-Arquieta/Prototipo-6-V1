@@ -13801,3 +13801,29 @@ img {
     padding: 10px 14px;
     font-size: 15px;
 }
+
+/* ====== CONTENEDOR DE GOOGLE MAPS ====== */
+.google-map-container {
+    position: relative;
+    width: 100%;
+    height: 220px;          /* Altura compacta, proporcional al footer */
+    border-radius: 8px;
+    overflow: hidden;
+    margin-top: 0;
+}
+
+.google-map-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
+    border: 0;
+}
+
+/* Ajuste para móviles: un poco más alto si la columna es más estrecha */
+@media (max-width: 768px) {
+    .google-map-container {
+        height: 200px;
+    }
+}
