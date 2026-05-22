@@ -1795,3 +1795,34 @@
         });
     }
 })();
+
+/* ====== CARRUSEL DE LOGROS: Forzar 1 columna ====== */
+(function() {
+    var logrosCarousel = document.getElementById('logros-carousel');
+    if (!logrosCarousel) return;
+
+    // Destruir el carrusel si Owl lo inicializó antes
+    if (jQuery && jQuery.fn.owlCarousel) {
+        var $carousel = jQuery('#logros-carousel');
+        $carousel.trigger('destroy.owl.carousel');
+        $carousel.find('.owl-stage-outer').children().unwrap();
+        $carousel.removeClass('owl-center owl-loaded owl-text-select-on');
+
+        // Re-inicializar con 1 sola tarjeta a la vez
+        $carousel.owlCarousel({
+            items: 1,
+            loop: true,
+            margin: 20,
+            nav: false,
+            dots: true,
+            //autoplay: true,
+            autoplayTimeout: 8000,
+            smartSpeed: 1200,
+            responsive: {
+                0: { items: 1 },
+                768: { items: 1 },
+                1200: { items: 1 }
+            }
+        });
+    }
+})();
