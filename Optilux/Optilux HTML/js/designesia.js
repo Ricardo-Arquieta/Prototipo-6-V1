@@ -1826,3 +1826,31 @@
         });
     }
 })();
+
+/* ====== CARRUSEL DE LOGROS DOCTOR: Forzar 1 columna ====== */
+(function() {
+    var logrosCarouselDoctor = document.getElementById('logros-carousel-doctor');
+    if (!logrosCarouselDoctor) return;
+
+    if (jQuery && jQuery.fn.owlCarousel) {
+        var $carousel = jQuery('#logros-carousel-doctor');
+        $carousel.trigger('destroy.owl.carousel');
+        $carousel.find('.owl-stage-outer').children().unwrap();
+        $carousel.removeClass('owl-center owl-loaded owl-text-select-on');
+
+        $carousel.owlCarousel({
+            items: 1,
+            loop: true,
+            margin: 20,
+            nav: false,
+            dots: true,
+            autoplay: false,       // Sin transición automática
+            smartSpeed: 800,
+            responsive: {
+                0: { items: 1 },
+                768: { items: 1 },
+                1200: { items: 1 }
+            }
+        });
+    }
+})();

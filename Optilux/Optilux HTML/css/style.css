@@ -13849,3 +13849,23 @@ img {
 #logros-carousel .item p {
     line-height: 1.4;
 }*/
+
+/* ====== CARRUSEL DE LOGROS DOCTOR: ALTURA FIJA Y SCROLL ====== */
+#logros-carousel-doctor .item {
+    min-height: 280px;
+    max-height: 280px;
+    overflow-y: auto;
+    padding-right: 5px;
+}
+
+#logros-carousel-doctor .item::-webkit-scrollbar {
+    width: 4px;
+}
+#logros-carousel-doctor .item::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 4px;
+}
+
+#logros-carousel-doctor .item p {
+    line-height: 1.4;
+}
