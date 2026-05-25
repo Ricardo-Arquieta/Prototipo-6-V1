@@ -13894,3 +13894,18 @@ img {
         height: 280px !important;
     }
 }
+
+/* ====== TAMAÑO Y VISIBILIDAD DEL LOGO PRINCIPAL SVG ====== */
+#logo .logo-main {
+    max-width: 200px;
+    height: auto;
+    filter: brightness(0) invert(1); /* Fuerza color blanco para que se vea en fondos oscuros */
+}
+
+/* ====== NEUTRALIZAR FILTRO DEL LOGO PRINCIPAL ====== */
+header.header-light #logo .logo-main {
+    filter: none !important;
+    max-width: 200px;         /* Tamaño máximo deseado (ajústelo a su gusto) */
+    height: auto;
+    background: transparent; /* Previene cualquier fondo blanco heredado */
+}
