@@ -37,3 +37,14 @@ body.internal header {
     border-left: 3px solid var(--primary-color, #6b90cb);
     padding-left: 20px;
 }
+
+/* ====== TARJETAS DE AVISOS LEGALES ====== */
+.card-legal {
+    border-top: 4px solid var(--primary-color, #6b90cb);
+    transition: all 0.3s ease;
+}
+
+.card-legal:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
