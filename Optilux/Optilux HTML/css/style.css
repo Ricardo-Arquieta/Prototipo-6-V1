@@ -13936,3 +13936,25 @@ header.header-light #logo .logo-main {
         padding-top: 140px;
     }
 }
+
+/* ====== IMÁGENES DE DOCTORES EN MÓVIL: EVITAR DISTORSIÓN ====== */
+@media (max-width: 768px) {
+    #conocenos .img-doctora-container,
+    #conocenos .img-doctor-container {
+        width: 280px !important;
+        height: 280px !important;
+        max-width: 100%;
+        margin: 0 auto;
+        display: block;
+        overflow: hidden;           /* Asegura que no se salga nada */
+    }
+
+    /* Forzar que la imagen se adapte sin deformarse */
+    #conocenos .img-doctora-container img,
+    #conocenos .img-doctor-container img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;  /* La clave: recorta sin deformar */
+        display: block;
+    }
+}
