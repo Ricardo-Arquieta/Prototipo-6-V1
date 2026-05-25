@@ -1854,3 +1854,69 @@
         });
     }
 })();
+
+/* ====== CALENDARIO FUNCIONAL PARA CITAS ====== */
+(function() {
+    var fechaInput = document.getElementById('fecha-cita');
+    var horaSelect = document.getElementById('hora-cita');
+    var btnAgendar = document.getElementById('btn-agendar');
+
+    if (!fechaInput || !horaSelect || !btnAgendar) return;
+
+    var horarios = {
+        lunesAViernes: { inicio: 9, fin: 18 },
+        sabado: { inicio: 10, fin: 14 }
+    };
+
+    fechaInput.addEventListener('change', generarHorarios);
+
+    function generarHorarios() {
+        var fecha = new Date(this.value + 'T12:00:00');
+        var hoy = new Date();
+        hoy.setHours(0,0,0,0);
+        var diaSemana = fecha.getDay();
+
+        horaSelect.innerHTML = '<option value="">Selecciona horario</option>';
+        horaSelect.disabled = true;
+        btnAgendar.href = '#';
+
+        if (!this.value || fecha < hoy || diaSemana === 0) {
+            return;
+        }
+
+        var inicio, fin;
+        if (diaSemana === 6) {
+            inicio = horarios.sabado.inicio;
+            fin = horarios.sabado.fin;
+        } else {
+            inicio = horarios.lunesAViernes.inicio;
+            fin = horarios.lunesAViernes.fin;
+        }
+
+        for (var h = inicio; h <= fin; h++) {
+            for (var m = 0; m < 60; m += 60) {
+                var horaTexto = ('0' + h).slice(-2) + ':' + ('0' + m).slice(-2);
+                var option = document.createElement('option');
+                option.value = horaTexto;
+                option.textContent = horaTexto;
+                horaSelect.appendChild(option);
+            }
+        }
+        horaSelect.disabled = false;
+    }
+
+    horaSelect.addEventListener('change', function() {
+        if (fechaInput.value && this.value) {
+            var urlBase = 'https://sistema-de-citas-del-cliente.com/agendar';
+            var params = '?fecha=' + fechaInput.value + '&hora=' + this.value;
+            btnAgendar.href = urlBase + params;
+        }
+    });
+
+    btnAgendar.addEventListener('click', function(e) {
+        if (!fechaInput.value || !horaSelect.value) {
+            e.preventDefault();
+            alert('Selecciona una fecha y horario válidos.');
+        }
+    });
+})();
