@@ -31,3 +31,9 @@ body.internal header {
         min-height: 50vh;      /* Reduce la altura en móviles */
     }
 }
+
+/* ====== AVISO LEGAL EN PÁGINAS INTERNAS ====== */
+.legal-notice {
+    border-left: 3px solid var(--primary-color, #6b90cb);
+    padding-left: 20px;
+}
