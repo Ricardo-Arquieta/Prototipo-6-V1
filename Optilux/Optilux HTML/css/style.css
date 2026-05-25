@@ -13830,10 +13830,13 @@ img {
 
 /* ====== CARRUSEL DE LOGROS: ALTURA FIJA Y SCROLL ====== */
 #logros-carousel .item {
-    min-height: 280px;          /* Altura base igual para todas */
-    max-height: 280px;          /* Limita la altura máxima */
-    overflow-y: auto;           /* Scroll si el texto es muy largo */
-    padding-right: 5px;         /* Evita que el scroll tape el texto */
+    min-height: 410px;
+    max-height: 410px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-y: auto;
+    padding-right: 5px;
 }
 
 /* Estilizar la barra de scroll */
@@ -13845,15 +13848,17 @@ img {
     border-radius: 4px;
 }
 
-/*
 #logros-carousel .item p {
     line-height: 1.4;
-}*/
+}
 
 /* ====== CARRUSEL DE LOGROS DOCTOR: ALTURA FIJA Y SCROLL ====== */
 #logros-carousel-doctor .item {
-    min-height: 280px;
-    max-height: 280px;
+    min-height: 410px;
+    max-height: 410px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     overflow-y: auto;
     padding-right: 5px;
 }
