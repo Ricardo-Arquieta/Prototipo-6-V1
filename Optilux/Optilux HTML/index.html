@@ -607,6 +607,20 @@
     <script src="js/plugins.js"></script>
     <script src="js/designesia.js"></script>
 
+    <!-- ====== SCROLL AUTOMÁTICO AL CARGAR CON HASH ====== -->
+    <script>
+        (function() {
+            if (window.location.hash) {
+                setTimeout(function() {
+                    var target = document.querySelector(window.location.hash);
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }, 300);
+            }
+        })();
+    </script>
+
 </body>
 
 </html>

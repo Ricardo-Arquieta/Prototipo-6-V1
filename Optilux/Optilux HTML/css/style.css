@@ -13914,3 +13914,25 @@ header.header-light #logo .logo-main {
     height: auto;
     background: transparent; /* Previene cualquier fondo blanco heredado */
 }
+
+/* ====== PÁGINAS INTERNAS: ESPACIADO SUPERIOR ====== */
+.internal-page {
+    padding-top: 150px; /* Altura suficiente para el header */
+}
+
+@media (max-width: 992px) {
+    .internal-page {
+        padding-top: 120px;
+    }
+}
+
+/* ====== PÁGINAS INTERNAS: ESPACIADO SUPERIOR ====== */
+.internal-page {
+    padding-top: 180px; /* Antes 150px. Ahora más alto para no ser cortado */
+}
+
+@media (max-width: 992px) {
+    .internal-page {
+        padding-top: 140px;
+    }
+}
