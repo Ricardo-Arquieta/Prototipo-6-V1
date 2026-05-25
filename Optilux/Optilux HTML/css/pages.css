@@ -16,3 +16,18 @@ body.internal header {
         padding-top: 120px !important;
     }
 }
+
+/* ====== HERO DE PÁGINA INTERNA ====== */
+.page-hero {
+    min-height: 80vh;           /* Altura del 80% de la pantalla, como un hero clásico */
+    display: flex;
+    align-items: center;       /* Centra verticalmente el texto */
+    justify-content: center;   /* Centra horizontalmente el texto */
+}
+
+/* Ajuste para móviles */
+@media (max-width: 768px) {
+    .page-hero {
+        min-height: 50vh;      /* Reduce la altura en móviles */
+    }
+}
