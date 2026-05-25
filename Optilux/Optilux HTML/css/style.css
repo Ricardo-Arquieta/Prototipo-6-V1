@@ -13736,7 +13736,7 @@ img {
 /* ====== BOTÓN FLOTANTE DE WHATSAPP ====== */
 #whatsapp-float {
     position: fixed;           /* Fijo en la ventana del navegador */
-    bottom: 25px;              /* Distancia desde abajo */
+    bottom: 80px; /* O el valor que prefiera */ /* Distancia desde abajo */
     right: 25px;               /* Distancia desde la derecha */
     z-index: 999;              /* Siempre por encima de otros elementos */
     background-color: #25D366; /* Verde WhatsApp oficial */
