@@ -13967,3 +13967,46 @@ header.header-light #logo .logo-main {
         display: block;
     }
 }
+
+/* ====== NUEVO DISEÑO DEL FOOTER (PALETA CORPORATIVA) ====== */
+footer {
+    background: #6b90cb !important;       /* Fondo cálido */
+    color: #eee8e0 !important;            /* Texto oscuro legible */
+    padding: 100px 0 0 0;
+}
+
+footer a {
+    color: #eee8e0 !important;            /* Enlaces en azul corporativo */
+    text-decoration: none !important;
+}
+
+footer a:hover {
+    color: #eee8e0 !important;            /* Hover más oscuro */
+}
+
+footer h5 {
+    color: #eee8e0 !important;            /* Títulos en azul */
+    font-size: 18px;
+    text-transform: none;
+}
+
+footer .fw-bold.text-white {
+    color: #eee8e0 !important;            /* Iconos de contacto en oscuro */
+}
+
+footer .id-color {
+    color: #eee8e0 !important;            /* Iconos en azul */
+}
+
+/* Subfooter */
+.subfooter {
+    margin-top: 50px;
+    border-top: solid 1px #eee8e0 !important; /* Línea sutil oscura */
+    padding: 20px 0 20px 0;
+    background: transparent !important;
+    color: #eee8e0!important;
+}
+
+.subfooter a {
+    color: #eee8e0 !important;
+}
