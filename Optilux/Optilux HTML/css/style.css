@@ -13946,15 +13946,24 @@ header.header-light #logo .logo-main {
         max-width: 100%;
         margin: 0 auto;
         display: block;
-        overflow: hidden;           /* Asegura que no se salga nada */
+        overflow: hidden;
     }
 
-    /* Forzar que la imagen se adapte sin deformarse */
-    #conocenos .img-doctora-container img,
+    /* Doctora: recorte anclado en la parte superior */
+    #conocenos .img-doctora-container img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        object-position: top center;
+        display: block;
+    }
+
+    /* Doctor: recorte centrado */
     #conocenos .img-doctor-container img {
         width: 100% !important;
         height: 100% !important;
-        object-fit: cover !important;  /* La clave: recorta sin deformar */
+        object-fit: cover !important;
+        object-position: center;
         display: block;
     }
 }
