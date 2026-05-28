@@ -14128,3 +14128,27 @@ footer .id-color {
     padding: 0;
 }
 
+/* ====== SECCIÓN TU CONSULTA: APILADO VERTICAL EN MÓVIL ====== */
+@media (max-width: 767px) {
+    #consulta .row.justify-content-center {
+        flex-direction: column;      /* Apila los pasos verticalmente */
+        align-items: center;
+    }
+
+    #consulta .de-step {
+        width: 100% !important;      /* Cada paso ocupa todo el ancho */
+        max-width: 100% !important;
+        flex: 0 0 100% !important;   /* Anula el ancho del 50% de col-6 */
+        margin-bottom: 30px;         /* Espacio entre pasos */
+    }
+
+    #consulta .de-step:last-child {
+        margin-bottom: 0;            /* El último paso no lleva margen inferior */
+    }
+
+    /* Oculta las flechas entre pasos en móvil (ya no son necesarias) */
+    #consulta .de-step-arrow::before,
+    #consulta .de-step-arrow::after {
+        display: none !important;
+    }
+}
