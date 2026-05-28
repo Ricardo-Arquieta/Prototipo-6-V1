@@ -1921,7 +1921,7 @@
     });
 })();
 
-/* ====== TOGGLE "LEER MÁS / LEER MENOS" EN CARRUSELES (SOLO MÓVIL) ====== */
+/* ====== TOGGLE "LEER MÁS / LEER MENOS" CON EXCLUSIÓN MUTUA ====== */
 (function() {
     function setupToggle() {
         var items = document.querySelectorAll('#logros-carousel .item, #logros-carousel-doctor .item');
@@ -1951,24 +1951,38 @@
         setupToggle();
     });
 
-    // Manejar el clic con toggle
+    // Manejar el clic con exclusión mutua
     document.addEventListener('click', function(e) {
-        if (e.target.classList.contains('btn-read-more')) {
-            var item = e.target.closest('.item');
-            var moreText = item.querySelector('.more-text');
-            var btn = item.querySelector('.btn-read-more');
+        if (!e.target.classList.contains('btn-read-more')) return;
 
-            if (item.classList.contains('expanded')) {
-                // Cerrar
-                moreText.style.display = 'none';
-                btn.textContent = 'Leer más...';
-                item.classList.remove('expanded');
-            } else {
-                // Expandir
-                moreText.style.display = 'block';
-                btn.textContent = 'Leer menos...';
-                item.classList.add('expanded');
-            }
+        var item = e.target.closest('.item');
+        var carousel = item.closest('.owl-carousel');      // Detecta a qué carrusel pertenece
+        var moreText = item.querySelector('.more-text');
+        var btn = item.querySelector('.btn-read-more');
+
+        // Si esta tarjeta YA está expandida, la cerramos
+        if (item.classList.contains('expanded')) {
+            moreText.style.display = 'none';
+            btn.textContent = 'Leer más...';
+            item.classList.remove('expanded');
+            return;
         }
+
+        // Antes de expandir esta, cerramos cualquier otra expandida en el MISMO carrusel
+        if (carousel) {
+            var allExpanded = carousel.querySelectorAll('.item.expanded');
+            allExpanded.forEach(function(expandedItem) {
+                var otherMore = expandedItem.querySelector('.more-text');
+                var otherBtn = expandedItem.querySelector('.btn-read-more');
+                if (otherMore) otherMore.style.display = 'none';
+                if (otherBtn) otherBtn.textContent = 'Leer más...';
+                expandedItem.classList.remove('expanded');
+            });
+        }
+
+        // Ahora expandimos la tarjeta actual
+        moreText.style.display = 'block';
+        btn.textContent = 'Leer menos...';
+        item.classList.add('expanded');
     });
 })();
