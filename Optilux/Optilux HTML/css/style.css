@@ -13875,6 +13875,94 @@ img {
     line-height: 1.4;
 }
 
+/* ====== CARRUSELES EN ESCRITORIO: COMPACTOS Y TEXTO ARRIBA ====== */
+@media (min-width: 992px) {
+    #logros-carousel .item,
+    #logros-carousel-doctor .item {
+        min-height: 280px;           /* Altura más compacta */
+        max-height: 280px;
+        align-items: flex-start;    /* Texto alineado arriba, sin centrar */
+        justify-content: flex-start;
+        padding: 20px 25px;         /* Espacio interno uniforme */
+    }
+    
+    #logros-carousel .item p,
+    #logros-carousel-doctor .item p {
+        line-height: 1.5;           /* Interlineado cómodo para lectura */
+        margin-bottom: 0;
+    }
+}
+
+/* ====== CARRUSELES EN MÓVIL: TEXTO RECORTADO Y BOTÓN INDEPENDIENTE ====== */
+@media (max-width: 991px) {
+    /* La tarjeta en sí no tiene altura fija, solo actúa como contenedor */
+    #logros-carousel .item,
+    #logros-carousel-doctor .item {
+        min-height: auto !important;
+        max-height: none !important;
+        overflow: visible;
+        display: flex !important;
+        flex-direction: column;
+        padding: 0;
+        position: relative;
+    }
+
+    /* Contenedor del texto: aquí se aplica la altura máxima y el degradado */
+    .card-text {
+        position: relative;
+        max-height: 220px;               /* Altura del texto visible */
+        overflow: hidden;
+        padding: 20px 20px 30px 20px;   /* Espacio extra para el degradado */
+        flex-shrink: 0;
+    }
+
+    /* Degradado en la parte inferior del contenedor de texto */
+    .card-text::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 40px;
+        background: linear-gradient(transparent, #ffffff);
+        pointer-events: none;
+        z-index: 2;
+    }
+
+    /* Ocultar el degradado cuando la tarjeta está expandida */
+    .item.expanded .card-text {
+        max-height: none;
+        overflow: visible;
+        padding-bottom: 0;
+    }
+    .item.expanded .card-text::after {
+        display: none;
+    }
+
+    /* Botón "Leer más...", siempre fuera del área recortada */
+    .btn-read-more {
+        display: block;
+        width: 100%;
+        text-align: right;
+        padding: 8px 20px 15px 20px;
+        color: #6b90cb;
+        font-weight: 600;
+        font-size: 14px;
+        text-decoration: none;
+        cursor: pointer;
+        background: #ffffff;
+        flex-shrink: 0;
+        z-index: 3;
+    }
+
+    /* Estado expandido: el botón ya no necesita fondo blanco */
+    .item.expanded .btn-read-more {
+        text-align: left;
+        padding-top: 0;
+        background: transparent;
+    }
+}
+
 /* ====== IMAGEN DOCTORA (Cuadro 1) ====== */
 #conocenos .img-doctora-container {
     width: 250px;              /* Ancho fijo deseado */
@@ -14010,3 +14098,33 @@ footer .id-color {
 .subfooter a {
     color: #eee8e0 !important;
 }
+
+/* ====== BOTÓN BACK-TO-TOP RECONSTRUIDO (CHEVRON CENTRADO) ====== */
+#back-to-top {
+    width: 50px;                           /* Ancho fijo */
+    height: 50px;                          /* Alto fijo */
+    background-color: #faf5f0 !important;  /* Fondo blanco roto */
+    border: 2px solid #c4d6ee !important;  /* Borde sutil */
+    border-radius: 50%;                    /* Forma circular */
+    position: fixed;                       /* Mantiene la posición fija */
+    z-index: 999;
+    overflow: hidden;                      /* Evita que el icono se desborde */
+    text-decoration: none;
+    /* Sin flexbox para evitar conflictos con pseudo-elementos */
+}
+
+#back-to-top:after {
+    content: "\f077";                      /* Chevrón FontAwesome */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    font-size: 20px;
+    color: #6b90cb;                        /* Azul corporativo */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);      /* Centrado matemático exacto */
+    line-height: 1;
+    margin: 0;
+    padding: 0;
+}
+

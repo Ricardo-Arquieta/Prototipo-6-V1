@@ -1920,3 +1920,55 @@
         }
     });
 })();
+
+/* ====== TOGGLE "LEER MÁS / LEER MENOS" EN CARRUSELES (SOLO MÓVIL) ====== */
+(function() {
+    function setupToggle() {
+        var items = document.querySelectorAll('#logros-carousel .item, #logros-carousel-doctor .item');
+        var isMobile = window.innerWidth <= 991;
+
+        items.forEach(function(item) {
+            var moreText = item.querySelector('.more-text');
+            var btn = item.querySelector('.btn-read-more');
+
+            if (!moreText || !btn) return;
+
+            if (isMobile) {
+                moreText.style.display = 'none';
+                btn.style.display = 'inline-block';
+                btn.textContent = 'Leer más...';
+                item.classList.remove('expanded');
+            } else {
+                moreText.style.display = 'inline';
+                btn.style.display = 'none';
+                item.classList.remove('expanded');
+            }
+        });
+    }
+
+    setupToggle();
+    window.addEventListener('resize', function() {
+        setupToggle();
+    });
+
+    // Manejar el clic con toggle
+    document.addEventListener('click', function(e) {
+        if (e.target.classList.contains('btn-read-more')) {
+            var item = e.target.closest('.item');
+            var moreText = item.querySelector('.more-text');
+            var btn = item.querySelector('.btn-read-more');
+
+            if (item.classList.contains('expanded')) {
+                // Cerrar
+                moreText.style.display = 'none';
+                btn.textContent = 'Leer más...';
+                item.classList.remove('expanded');
+            } else {
+                // Expandir
+                moreText.style.display = 'block';
+                btn.textContent = 'Leer menos...';
+                item.classList.add('expanded');
+            }
+        }
+    });
+})();

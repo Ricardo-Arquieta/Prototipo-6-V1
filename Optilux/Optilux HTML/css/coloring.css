@@ -513,3 +513,15 @@ footer.footer-light{
     }
 
 }
+
+/* ====== BOTÓN BACK-TO-TOP: COLOR CLARO DE LA PALETA ====== */
+#back-to-top {
+    background: #faf5f0 !important;   /* Fondo blanco roto */
+    color: #6b90cb !important;        /* Icono/Flecha en azul corporativo */
+    border: 2px solid #c4d6ee !important; /* Borde sutil azul claro */
+}
+
+#back-to-top:hover {
+    background: #ffffff !important;   /* Fondo blanco puro al pasar el ratón */
+    color: #5a7fb8 !important;        /* Azul más intenso */
+}
