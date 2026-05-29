@@ -14152,3 +14152,10 @@ footer .id-color {
         display: none !important;
     }
 }
+
+/* ====== IGUALAR ALTURA DE IMÁGENES EN TARJETAS DE SERVICIOS ====== */
+#servicios .hover .relative.overflow-hidden.rounded-1 img {
+    height: 200px;            /* Altura fija para todas las imágenes */
+    object-fit: cover;        /* Recorta sin deformar */
+    width: 100%;
+}
