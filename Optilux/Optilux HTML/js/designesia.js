@@ -1855,13 +1855,14 @@
     }
 })();
 
-/* ====== CALENDARIO FUNCIONAL PARA CITAS ====== */
+/* ====== CALENDARIO FUNCIONAL PARA CITAS (CON ESPECIALIDAD) ====== */
 (function() {
     var fechaInput = document.getElementById('fecha-cita');
     var horaSelect = document.getElementById('hora-cita');
+    var especialidadSelect = document.getElementById('especialidad-cita');
     var btnAgendar = document.getElementById('btn-agendar');
 
-    if (!fechaInput || !horaSelect || !btnAgendar) return;
+    if (!fechaInput || !horaSelect || !especialidadSelect || !btnAgendar) return;
 
     var horarios = {
         lunesAViernes: { inicio: 9, fin: 18 },
@@ -1878,6 +1879,8 @@
 
         horaSelect.innerHTML = '<option value="">Selecciona horario</option>';
         horaSelect.disabled = true;
+        especialidadSelect.disabled = true;
+        especialidadSelect.value = '';
         btnAgendar.href = '#';
 
         if (!this.value || fecha < hoy || diaSemana === 0) {
@@ -1905,21 +1908,32 @@
         horaSelect.disabled = false;
     }
 
+    // Habilitar especialidad cuando se elige horario
     horaSelect.addEventListener('change', function() {
-        if (fechaInput.value && this.value) {
+        if (this.value) {
+            especialidadSelect.disabled = false;
+        } else {
+            especialidadSelect.disabled = true;
+        }
+    });
+
+    // Actualizar enlace cuando se elige especialidad
+    especialidadSelect.addEventListener('change', function() {
+        if (fechaInput.value && horaSelect.value && this.value) {
             var urlBase = 'https://sistema-de-citas-del-cliente.com/agendar';
-            var params = '?fecha=' + fechaInput.value + '&hora=' + this.value;
+            var params = '?fecha=' + fechaInput.value + '&hora=' + horaSelect.value + '&especialidad=' + encodeURIComponent(this.value);
             btnAgendar.href = urlBase + params;
         }
     });
 
     btnAgendar.addEventListener('click', function(e) {
-        if (!fechaInput.value || !horaSelect.value) {
+        if (!fechaInput.value || !horaSelect.value || !especialidadSelect.value) {
             e.preventDefault();
-            alert('Selecciona una fecha y horario válidos.');
+            alert('Selecciona una fecha, un horario y una especialidad válidos.');
         }
     });
 })();
+
 
 /* ====== TOGGLE "LEER MÁS / LEER MENOS" CON EXCLUSIÓN MUTUA ====== */
 (function() {
@@ -1986,3 +2000,4 @@
         item.classList.add('expanded');
     });
 })();
+
