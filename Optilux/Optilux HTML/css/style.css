@@ -3129,34 +3129,30 @@ a.btn-line,
   outline: 0;
 }
 
-a.btn-main.fx-slide{
-  overflow: hidden;
+/* ====== BOTÓN PRINCIPAL: EFECTO SLIDE NEUTRALIZADO ====== */
+a.btn-main.fx-slide {
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
 }
 
-a.btn-main.fx-slide span{
-  display: block;
-  position: relative;
-  transition: all .3s ease-in-out;
+a.btn-main.fx-slide span {
+    display: inline-block;
+    position: relative;
+    z-index: 2;
+    transition: none !important;
+    transform: none !important;
+    opacity: 1 !important;
 }
 
-a.btn-main.fx-slide:hover span{
-  transform: translate(0, 40px);
-  opacity: 0;
+a.btn-main.fx-slide:hover span {
+    transform: none !important;
+    opacity: 1 !important;
 }
 
-a.btn-main.fx-slide:hover:before {
-  opacity: 1;
-  transform: translate(0, 0);
-}
-
-a.btn-main.fx-slide:before {
-  content: attr(data-hover);
-  position: absolute;
-  left: 0;
-  width: 100%;
-  opacity: 0;
-  transform: translate(0, -100%);
-  transition: all 0.3s ease-in-out;
+/* Eliminamos el pseudo-elemento que duplicaba el texto */
+a.btn-main.fx-slide::before {
+    display: none !important;
 }
 
 a.btn-main.btn-dark-trans{
@@ -3859,7 +3855,7 @@ footer h6 {
 
 
 .text-line{
-   color: transparent !important;
+  color: transparent !important;
   -webkit-text-stroke: 1px #ffffff;
 }
 
@@ -14158,4 +14154,25 @@ footer .id-color {
     height: 200px;            /* Altura fija para todas las imágenes */
     object-fit: cover;        /* Recorta sin deformar */
     width: 100%;
+}
+
+/* ====== ALTURA MÍNIMA PARA EL WIDGET DE HULI ====== */
+.huli-cw {
+    min-height: 500px;            /* Altura suficiente para que no esté vacío */
+    background: #f9f9f9;          /* Fondo sutil para ver el contenedor */
+    border-radius: 8px;
+}
+
+/* ====== EFECTO HOVER Y CLIC PARA BOTONES PRINCIPALES ====== */
+.btn-main {
+    transition: background-color 0.3s ease, color 0.3s ease;
+    background-image: none !important; /* Anula cualquier gradiente heredado */
+}
+
+.btn-main:hover {
+    background-color: #4d6fa8 !important;
+}
+
+.btn-main:active {
+    background-color: #3b5998 !important;
 }
