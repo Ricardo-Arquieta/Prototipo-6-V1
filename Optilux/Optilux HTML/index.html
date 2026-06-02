@@ -519,10 +519,47 @@
                         <!--Inicio de calendario-->
                         <div class="col-lg-6" id="seccion-calendario">
                             <div class="subtitle s2 mb-3">Agenda tu cita</div>
-                            <h2 class="split mb-4">Programe su cita aquí</h2>
-                            <p class="small text-muted mb-4">Para agendar con la Doctora Stefany Rodríguez Cedillo, haga clic sobre la hora que más le sirva y siga los pasos.</p>
-                            <!-- Widget de Huli -->
-                            <div class='huli-cw' data-doctor="112078" data-clinic="47655" data-lang="es" style="min-height: 400px; background: #f9f9f9; border-radius: 8px; display: flex; align-items: center; justify-content: center;"></div>
+                            <h2 class="split mb-4">Selecciona día y hora</h2>
+
+                            <!-- Selector de fecha -->
+                            <div class="mb-3">
+                                <label for="fecha-cita" class="form-label">Fecha</label>
+                                <input type="date" id="fecha-cita" class="form-control" required>
+                            </div>
+
+                            <!-- Selector de hora -->
+                            <div class="mb-4">
+                                <label for="hora-cita" class="form-label">Horario disponible</label>
+                                <select id="hora-cita" class="form-select" required disabled>
+                                    <option value="">Selecciona una fecha primero</option>
+                                </select>
+                            </div>
+
+                            <!-- Selector de especialidad -->
+                            <div class="mb-4">
+                                <label for="especialidad-cita" class="form-label">Especialidad</label>
+                                <select id="especialidad-cita" class="form-select" required disabled>
+                                    <option value="">Selecciona una especialidad</option>
+                                    <option value="Nefrología">Nefrología</option>
+                                    <option value="Medicina Interna / Salud Metabólica">Medicina Interna / Salud Metabólica</option>
+                                </select>
+                            </div>
+
+                            <!-- NUEVO: Selector de ubicación -->
+                            <div class="mb-4">
+                                <label for="ubicacion-cita" class="form-label">Ubicación</label>
+                                <select id="ubicacion-cita" class="form-select" required disabled>
+                                    <option value="">Selecciona una ubicación</option>
+                                    <!-- Las ubicaciones reales se añadirán cuando el cliente las proporcione -->
+                                    <option value="Sucursal Centro">Sucursal Centro</option>
+                                    <option value="Sucursal Norte">Sucursal Norte</option>
+                                    <option value="Sucursal Sur">Sucursal Sur</option>
+                                </select>
+                            </div>
+
+                            <!-- Botón que redirige al sistema externo -->
+                            <a id="btn-agendar" class="btn-main fx-slide" href="#" target="_blank" rel="noopener"><span>Agendar cita</span></a>
+                            <small class="d-block mt-2 text-muted">Serás redirigido a nuestro sistema de citas para confirmar disponibilidad.</small>
                         </div>
                         
                     </div>

@@ -1856,13 +1856,15 @@
 })();
 
 /* ====== CALENDARIO FUNCIONAL PARA CITAS (CON ESPECIALIDAD) ====== */
+/* ====== CALENDARIO FUNCIONAL PARA CITAS (CON ESPECIALIDAD Y UBICACIÓN) ====== */
 (function() {
     var fechaInput = document.getElementById('fecha-cita');
     var horaSelect = document.getElementById('hora-cita');
     var especialidadSelect = document.getElementById('especialidad-cita');
+    var ubicacionSelect = document.getElementById('ubicacion-cita');
     var btnAgendar = document.getElementById('btn-agendar');
 
-    if (!fechaInput || !horaSelect || !especialidadSelect || !btnAgendar) return;
+    if (!fechaInput || !horaSelect || !especialidadSelect || !ubicacionSelect || !btnAgendar) return;
 
     var horarios = {
         lunesAViernes: { inicio: 9, fin: 18 },
@@ -1881,6 +1883,8 @@
         horaSelect.disabled = true;
         especialidadSelect.disabled = true;
         especialidadSelect.value = '';
+        ubicacionSelect.disabled = true;
+        ubicacionSelect.value = '';
         btnAgendar.href = '#';
 
         if (!this.value || fecha < hoy || diaSemana === 0) {
@@ -1917,19 +1921,31 @@
         }
     });
 
-    // Actualizar enlace cuando se elige especialidad
+    // Habilitar ubicación cuando se elige especialidad
     especialidadSelect.addEventListener('change', function() {
-        if (fechaInput.value && horaSelect.value && this.value) {
+        if (this.value) {
+            ubicacionSelect.disabled = false;
+        } else {
+            ubicacionSelect.disabled = true;
+        }
+    });
+
+    // Actualizar enlace cuando se elige ubicación
+    ubicacionSelect.addEventListener('change', function() {
+        if (fechaInput.value && horaSelect.value && especialidadSelect.value && this.value) {
             var urlBase = 'https://sistema-de-citas-del-cliente.com/agendar';
-            var params = '?fecha=' + fechaInput.value + '&hora=' + horaSelect.value + '&especialidad=' + encodeURIComponent(this.value);
+            var params = '?fecha=' + fechaInput.value 
+                        + '&hora=' + horaSelect.value 
+                        + '&especialidad=' + encodeURIComponent(especialidadSelect.value)
+                        + '&ubicacion=' + encodeURIComponent(this.value);
             btnAgendar.href = urlBase + params;
         }
     });
 
     btnAgendar.addEventListener('click', function(e) {
-        if (!fechaInput.value || !horaSelect.value || !especialidadSelect.value) {
+        if (!fechaInput.value || !horaSelect.value || !especialidadSelect.value || !ubicacionSelect.value) {
             e.preventDefault();
-            alert('Selecciona una fecha, un horario y una especialidad válidos.');
+            alert('Selecciona una fecha, un horario, una especialidad y una ubicación válidos.');
         }
     });
 })();
