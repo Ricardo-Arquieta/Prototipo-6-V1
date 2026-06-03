@@ -14176,3 +14176,27 @@ footer .id-color {
 .btn-main:active {
     background-color: #3b5998 !important;
 }
+
+/* ====== TOOLTIP "SOLICITAR INFORMACIÓN" EN BOTÓN DE WHATSAPP ====== */
+#whatsapp-float::after {
+    content: "Solicitar información";
+    position: absolute;
+    bottom: 100%;                 /* Pega el tooltip justo arriba del botón */
+    left: 50%;                    /* Centrado horizontalmente respecto al botón */
+    transform: translateX(-50%);
+    margin-bottom: 8px;           /* Pequeña separación del botón */
+    background: #333333;
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 6px 12px;
+    border-radius: 6px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+#whatsapp-float:hover::after {
+    opacity: 1;
+}

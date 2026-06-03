@@ -467,62 +467,103 @@
 
             <!-- =====SECCIÓN DE FORMULARIO Y CALENDARIO==== -->
             <section id="formulario-contacto">
+                
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 text-center mb-5">
+                            <div class="subtitle s2 mb-3">Agenda tu cita</div>
+                            <h2 class="split">Completa tus datos y elige tu horario</h2>
+                        </div>
+                    </div>
+                    <div class="row g-4 align-items-stretch">
+                
                 <div class="container">
                     <div class="row g-4 align-items-stretch">
                         <div class="col-lg-6">
-                            <div class="subtitle s2 mb-3">Contáctanos</div>
-                            <h2 class="split mb-4">Envíanos tu mensaje</h2>
-                            
-                            <form action="https://formspree.io/f/xqejjqon" method="POST" class="contact-form">
+                        
+                            <form id="form-agendar" action="#" method="POST">
                                 <div class="row g-3">
                                     <div class="col-md-6">
-                                        <label for="nombre" class="form-label">Nombre(s)</label>
-                                        <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Tu nombre(s)" required>
+                                        <label for="nombre-cita" class="form-label">Nombre(s)</label>
+                                        <input type="text" class="form-control" id="nombre-cita" name="nombre" placeholder="Tu nombre(s)" required>
                                     </div>
-
                                     <div class="col-md-6">
-                                        <label for="apellido" class="form-label">Apellidos</label>
-                                        <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Tus apellido(s)" required>
+                                        <label for="apellido-cita" class="form-label">Apellidos</label>
+                                        <input type="text" class="form-control" id="apellido-cita" name="apellido" placeholder="Tus apellido(s)" required>
                                     </div>
-
                                     <div class="col-12">
-                                        <label for="email" class="form-label">Correo Electrónico</label>
-                                        <input type="email" class="form-control" id="email" name="email" placeholder="correo@ejemplo.com" required>
+                                        <label for="email-cita" class="form-label">Correo Electrónico</label>
+                                        <input type="email" class="form-control" id="email-cita" name="email" placeholder="correo@ejemplo.com" required>
                                     </div>
-
                                     <div class="col-12">
-                                        <label for="telefono" class="form-label">Número de contacto</label>
-                                        <input type="tel" class="form-control" id="telefono" name="telefono" placeholder="+52 000 000 0000" required>
+                                        <label for="telefono-cita" class="form-label">Número de contacto</label>
+                                        <input type="tel" class="form-control" id="telefono-cita" name="telefono" placeholder="+52 000 000 0000" required>
                                     </div>
-                                    
-
                                     <div class="col-12">
-                                        <label for="motivo" class="form-label">Motivo de consulta</label>
-                                        <select class="form-select" id="motivo" name="motivo" required>
+                                        <label for="motivo-cita" class="form-label">Motivo de consulta</label>
+                                        <select class="form-select" id="motivo-cita" name="motivo" required>
                                             <option value="" selected disabled>Selecciona una opción</option>
-                                            <option value="diabetes">Diabetes y control glucémico</option>
-                                            <option value="insulina">Resistencia a la insulina</option>
-                                            <option value="dislipidemias">Dislipidemias (colesterol / triglicéridos)</option>
-                                            <option value="sindrome-metabolico">Síndrome metabólico</option>
-                                            <option value="enfermedad-renal">Enfermedad renal crónica</option>
-                                            <option value="preoperatoria">Evaluación preoperatoria</option>
+                                            <option value="obesidad">Obesidad o control de peso</option>
+                                            <option value="diabetes">Diabetes o glucosa elevada</option>
+                                            <option value="insulina">Resistencia a la insulina / Prediabetes</option>
                                             <option value="hipertension">Hipertensión arterial</option>
+                                            <option value="dislipidemias">Colesterol o triglicéridos elevados</option>
+                                            <option value="higado-graso">Hígado graso</option>
+                                            <option value="laboratorio">Alteraciones en estudios de laboratorio</option>
+                                            <option value="check-up">Valoración metabólica integral (check-up)</option>
+                                            <option value="preoperatoria">Valoración preoperatoria</option>
+                                            <option value="enfermedad-renal">Enfermedad renal</option>
+                                            <option value="litiasis">Piedras en los riñones (litiasis renal)</option>
+                                            <option value="proteinuria">Proteinuria o alteraciones en estudios renales</option>
+                                            <option value="trasplante">Seguimiento de trasplante renal</option>
+                                            <option value="inbody">Evaluación de composición corporal (InBody)</option>
+                                            <option value="otro">Otro</option>
                                         </select>
-                                    </div>
-                                    <div class="col-12">
-                                        <button type="submit" class="btn-main fx-slide"><span>Enviar mensaje</span></button>
                                     </div>
                                 </div>
                             </form>
+                            <p class="small text-muted mt-3"><em>Todos los campos son obligatorios. Tus datos serán tratados de forma confidencial.</em></p>
+                            
                         </div>
 
                         <!--Inicio de calendario-->
                         <div class="col-lg-6" id="seccion-calendario">
-                            <div class="subtitle s2 mb-3">Agenda tu cita</div>
-                            <h2 class="split mb-4">Programe su cita aquí</h2>
-                            <p class="small text-muted mb-4">Para agendar con la Doctora Stefany Rodríguez Cedillo, haga clic sobre la hora que más le sirva y siga los pasos.</p>
-                            <!-- Widget de Huli -->
-                            <div class='huli-cw' data-doctor="112078" data-clinic="47655" data-lang="es" style="min-height: 400px; background: #f9f9f9; border-radius: 8px; display: flex; align-items: center; justify-content: center;"></div>
+                            
+
+                            <!-- Selector de fecha -->
+                            <div class="mb-3">
+                                <label for="fecha-cita" class="form-label">Fecha</label>
+                                <input type="date" id="fecha-cita" class="form-control" required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="hora-cita" class="form-label">Horario disponible</label>
+                                <select id="hora-cita" class="form-select" required>
+                                    <option value="">Selecciona una fecha primero</option>
+                                </select>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="especialidad-cita" class="form-label">Especialidad</label>
+                                <select id="especialidad-cita" class="form-select" required>
+                                    <option value="">Selecciona una especialidad</option>
+                                    <option value="Nefrología">Nefrología</option>
+                                    <option value="Medicina Interna / Salud Metabólica">Medicina Interna / Salud Metabólica</option>
+                                </select>
+                            </div>
+
+                            <div class="mb-4">
+                                <label for="ubicacion-cita" class="form-label">Ubicación</label>
+                                <select id="ubicacion-cita" class="form-select" required>
+                                    <option value="">Selecciona una ubicación</option>
+                                    <option value="Sucursal Centro">Sucursal Centro</option>
+                                    <option value="Sucursal Norte">Sucursal Norte</option>
+                                    <option value="Sucursal Sur">Sucursal Sur</option>
+                                </select>
+                            </div>
+
+                            <a id="btn-agendar" class="btn-main fx-slide w-100 text-center" href="#" target="_blank" rel="noopener"><span>Agendar cita</span></a>
+                            <p class="small text-muted mt-3"><em>Serás redirigido a nuestro sistema de citas para confirmar disponibilidad.</em></p>
                         </div>
                         
                     </div>
