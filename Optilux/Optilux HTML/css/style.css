@@ -13779,24 +13779,7 @@ img {
     }
 }
 
-/* ====== IGUALAR ALTURA EN SECCIÓN FORMULARIO DE CONTACTO ====== */
-#formulario-contacto .row.g-4.align-items-stretch {
-    display: flex;
-    align-items: stretch;
-    flex-wrap: wrap;
-}
 
-#formulario-contacto .col-lg-6 {
-    display: flex;
-    flex-direction: column;
-}
-
-/* Compactar ligeramente los elementos del calendario */
-#formulario-contacto #fecha-cita,
-#formulario-contacto #hora-cita {
-    padding: 10px 14px;
-    font-size: 15px;
-}
 
 /* ====== CONTENEDOR DE GOOGLE MAPS ====== */
 .google-map-container {
