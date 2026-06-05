@@ -13779,24 +13779,7 @@ img {
     }
 }
 
-/* ====== IGUALAR ALTURA EN SECCIÓN FORMULARIO DE CONTACTO ====== */
-#formulario-contacto .row.g-4.align-items-stretch {
-    display: flex;
-    align-items: stretch;
-    flex-wrap: wrap;
-}
 
-#formulario-contacto .col-lg-6 {
-    display: flex;
-    flex-direction: column;
-}
-
-/* Compactar ligeramente los elementos del calendario */
-#formulario-contacto #fecha-cita,
-#formulario-contacto #hora-cita {
-    padding: 10px 14px;
-    font-size: 15px;
-}
 
 /* ====== CONTENEDOR DE GOOGLE MAPS ====== */
 .google-map-container {
@@ -14177,6 +14160,13 @@ footer .id-color {
     background-color: #3b5998 !important;
 }
 
+.glass-card .btn-main:hover {
+    background-color: #4d6fa8 !important;
+}
+.glass-card .btn-main:active {
+    background-color: #3b5998 !important;
+}
+
 /* ====== TOOLTIP "SOLICITAR INFORMACIÓN" EN BOTÓN DE WHATSAPP ====== */
 #whatsapp-float::after {
     content: "Solicitar información";
@@ -14199,4 +14189,114 @@ footer .id-color {
 
 #whatsapp-float:hover::after {
     opacity: 1;
+}
+
+/* ====== SECCIÓN AGENDAR CITA (DOCTORALIA) ====== */
+
+/* Contenedor de cada especialista */
+.specialist-card {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    border-radius: 12px;
+    min-height: 480px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    filter: grayscale(50%);
+    transition: all 0.4s ease;
+}
+
+/* Efecto hover: recupera el color y añade tinte primario */
+.specialist-card:hover {
+    filter: grayscale(0%);
+}
+
+.specialist-card-overlay {
+    background: transparent;
+    transition: background 0.4s ease;
+}
+
+.specialist-card:hover .specialist-card-overlay {
+    background: rgba(107, 144, 203, 0.35);
+}
+
+/* Capa de superposición sutil */
+.specialist-card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(107, 144, 203, 0.15);
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Tarjeta glass morphism */
+.glass-card {
+    position: relative;
+    z-index: 2;
+    width: 85%;
+    max-width: 320px;
+    background: rgba(255, 255, 255, 0.50);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 16px;
+    padding: 30px 25px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Círculo para la foto de perfil */
+.glass-card-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid rgba(255, 255, 255, 0.8);
+    background: #d9d9d9;
+}
+
+.glass-card-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Texto dentro de la tarjeta */
+.glass-card-text {
+    font-size: 15px;
+    color: #2c2c2c;
+    line-height: 1.6;
+}
+
+/* Ajustar posición de la imagen de fondo */
+.specialist-card {
+    background-position: center top;   /* Muestra la parte superior de la imagen (el rostro) */
+}
+
+/* Ajuste para móviles */
+@media (max-width: 768px) {
+    .specialist-card {
+        min-height: 420px;
+    }
+    .glass-card {
+        width: 90%;
+        padding: 25px 20px;
+    }
+}
+
+/* Ajustar posición de la imagen de la doctora en el avatar */
+#avatar-doctora {
+  object-position: center 5% !important;
+    object-fit: cover !important;
+    width: 100% !important;
+    height: 100% !important;
+    display: block; /* Mueve la imagen hacia abajo para mostrar el rostro */
 }

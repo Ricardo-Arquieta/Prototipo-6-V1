@@ -6,8 +6,8 @@
     <link rel="icon" href="images/icono_blanco.webp" type="image/gif" sizes="16x16">
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
     <meta content="width=device-width, initial-scale=1.0" name="viewport" >
-    <meta content="Optilux - Eye Clinic Optometrist and Optical Store HTML Template" name="description" >
-    <meta content="" name="keywords">
+    <meta name="description" content="Especialistas en salud metabólica y renal en Xalapa, Veracruz. Atención integral con la Dra. Stefany Rodríguez y el Dr. José Alejandro Campos. ¡Agenda tu cita hoy!">
+    <meta name="keywords" content="Xalapa, Veracruz, SERACEM, nefrólogo, obesidad, resistencia a la insulina, prediabetes, diabetes, hipertensión, enfermedad renal crónica, hemodiálisis, diálisis peritoneal, salud metabólica, salud renal, higado graso">
     <meta content="" name="author">
     <!-- CSS Files
     ================================================== -->
@@ -70,7 +70,7 @@
                                 </div>
 
                                 <div class="de-flex-col">
-                                    <a class="btn-main fx-slide w-100" href="#seccion-calendario"><span>Agenda tu Cita</span></a>
+                                    <a class="btn-main fx-slide w-100" href="#agendar-cita"><span>Agenda tu Cita</span></a>
                                     <div class="menu_side_area">
                                         <span id="menu-btn"></span>
                                     </div>
@@ -96,9 +96,7 @@
                             <h1 class="split">SALUD METABÓLICA Y RENAL INTEGRAL</h1>
                             <div class="spacer-single"></div>
                             <div class="row g-4 align-items-center">
-                                <div class="col-lg-3 wow fadeInRight" data-wow-delay="1.6s">
-                                    <a class="btn-main fx-slide" href="#seccion-calendario"><span>Agendar</span></a>
-                                </div>
+                                <a class="btn-main fx-slide" href="#agendar-cita" style="width: auto; display: inline-block;"><span>Agendar</span></a>
                                 <div class="col-lg-7 wow fadeInRight" data-wow-delay="1.8s">
                                     <p class="mb-0">MEDICINA INTERNA, OBESIDAD y NEFROLOGÍA</p>
                                 </div>
@@ -175,7 +173,7 @@
                                     <li>Acompañamiento real</li>
                                     <li>Cuidado Integral de tu Metabolismo y tus riñones</li>
                                 </ul>
-                                <a class="btn-main fx-slide wow fadeInUp" data-wow-delay=".8s" href="#seccion-calendario"><span>Programa tu consulta</span></a>
+                                <a class="btn-main fx-slide wow fadeInUp" data-wow-delay=".8s" href="#agendar-cita"><span>Programa tu consulta</span></a>
                             </div>
                         </div>
                         <div class="col-lg-6">
@@ -406,7 +404,7 @@
                                 <div class="relative overflow-hidden rounded-1">
                                     <a href="service-single.html" class="d-block hover">
                                         <div class="relative overflow-hidden rounded-1">
-                                            <img src="images/services/4.webp" class="w-100 hover-scale-1-2" alt="">
+                                            <img src="images/tech.png" class="w-100 hover-scale-1-2" alt="">
                                             <div class="gradient-edge-bottom color h-90 op-8"></div>
                                         </div>
                                     
@@ -465,107 +463,52 @@
                 </div>
             </section>
 
-            <!-- =====SECCIÓN DE FORMULARIO Y CALENDARIO==== -->
-            <section id="formulario-contacto">
-                
+            <!--Doctoralia App-->
+            <!-- ====== SECCIÓN: Agendar Cita (Doctoralia) ====== -->
+            <section id="agendar-cita" class="relative">
                 <div class="container">
                     <div class="row">
                         <div class="col-12 text-center mb-5">
                             <div class="subtitle s2 mb-3">Agenda tu cita</div>
-                            <h2 class="split">Completa tus datos y elige tu horario</h2>
+                            <h2 class="split">Elige a tu especialista</h2>
+                            <p class="lead">Selecciona la especialidad que necesitas y serás redirigido a nuestro sistema de citas para confirmar disponibilidad.</p>
                         </div>
                     </div>
-                    <div class="row g-4 align-items-stretch">
-                
-                <div class="container">
-                    <div class="row g-4 align-items-stretch">
-                        <div class="col-lg-6">
-                        
-                            <form id="form-agendar" action="#" method="POST">
-                                <div class="row g-3">
-                                    <div class="col-md-6">
-                                        <label for="nombre-cita" class="form-label">Nombre(s)</label>
-                                        <input type="text" class="form-control" id="nombre-cita" name="nombre" placeholder="Tu nombre(s)" required>
+                    <div class="row g-4 justify-content-center">
+
+                        <!-- Bloque Izquierdo: Salud Metabólica -->
+                        <div class="col-lg-6 col-md-8">
+                            <div class="specialist-card" style="background-image: url('images/salud_metabólica-1-w.webp');">
+                                <div class="specialist-card-overlay"></div>
+                                <div class="glass-card">
+                                    <div class="glass-card-avatar">
+                                        <img src="images/team/fany-1.webp" alt="Dra. Stefany">
                                     </div>
-                                    <div class="col-md-6">
-                                        <label for="apellido-cita" class="form-label">Apellidos</label>
-                                        <input type="text" class="form-control" id="apellido-cita" name="apellido" placeholder="Tus apellido(s)" required>
-                                    </div>
-                                    <div class="col-12">
-                                        <label for="email-cita" class="form-label">Correo Electrónico</label>
-                                        <input type="email" class="form-control" id="email-cita" name="email" placeholder="correo@ejemplo.com" required>
-                                    </div>
-                                    <div class="col-12">
-                                        <label for="telefono-cita" class="form-label">Número de contacto</label>
-                                        <input type="tel" class="form-control" id="telefono-cita" name="telefono" placeholder="+52 000 000 0000" required>
-                                    </div>
-                                    <div class="col-12">
-                                        <label for="motivo-cita" class="form-label">Motivo de consulta</label>
-                                        <select class="form-select" id="motivo-cita" name="motivo" required>
-                                            <option value="" selected disabled>Selecciona una opción</option>
-                                            <option value="obesidad">Obesidad o control de peso</option>
-                                            <option value="diabetes">Diabetes o glucosa elevada</option>
-                                            <option value="insulina">Resistencia a la insulina / Prediabetes</option>
-                                            <option value="hipertension">Hipertensión arterial</option>
-                                            <option value="dislipidemias">Colesterol o triglicéridos elevados</option>
-                                            <option value="higado-graso">Hígado graso</option>
-                                            <option value="laboratorio">Alteraciones en estudios de laboratorio</option>
-                                            <option value="check-up">Valoración metabólica integral (check-up)</option>
-                                            <option value="preoperatoria">Valoración preoperatoria</option>
-                                            <option value="enfermedad-renal">Enfermedad renal</option>
-                                            <option value="litiasis">Piedras en los riñones (litiasis renal)</option>
-                                            <option value="proteinuria">Proteinuria o alteraciones en estudios renales</option>
-                                            <option value="trasplante">Seguimiento de trasplante renal</option>
-                                            <option value="inbody">Evaluación de composición corporal (InBody)</option>
-                                            <option value="otro">Otro</option>
-                                        </select>
-                                    </div>
+                                    <p class="glass-card-text">Tu salud metabólica merece una atención integral. Reserva tu consulta con nuestra especialista y da el primer paso hacia tu bienestar.</p>
+                                    <a href="https://www.doctoralia.com.mx/z/jdJp81" target="_blank" rel="noopener" class="btn-main fx-slide"><span>Agendar cita</span></a>
                                 </div>
-                            </form>
-                            <p class="small text-muted mt-3"><em>Todos los campos son obligatorios. Tus datos serán tratados de forma confidencial.</em></p>
-                            
+                            </div>
                         </div>
 
-                        <!--Inicio de calendario-->
-                        <div class="col-lg-6" id="seccion-calendario">
-                            
-
-                            <!-- Selector de fecha -->
-                            <div class="mb-3">
-                                <label for="fecha-cita" class="form-label">Fecha</label>
-                                <input type="date" id="fecha-cita" class="form-control" required>
+                        <!-- Bloque Derecho: Salud Renal -->
+                        <div class="col-lg-6 col-md-8">
+                            <div class="specialist-card" style="background-image: url('images/salud_renal-1-w.webp');">
+                                <div class="specialist-card-overlay"></div>
+                                <div class="glass-card">
+                                    <div class="glass-card-avatar">
+                                        <img src="images/team/4.png" alt="Dr. Alejandro">
+                                    </div>
+                                    <p class="glass-card-text">La salud de tus riñones es fundamental para tu calidad de vida. Agenda una valoración con nuestro especialista en nefrología.</p>
+                                    <a href="https://www.doctoralia.com.mx/z/wBwPJb" target="_blank" rel="noopener" class="btn-main fx-slide"><span>Agendar cita</span></a>
+                                </div>
                             </div>
-
-                            <div class="mb-3">
-                                <label for="hora-cita" class="form-label">Horario disponible</label>
-                                <select id="hora-cita" class="form-select" required>
-                                    <option value="">Selecciona una fecha primero</option>
-                                </select>
-                            </div>
-
-                            <div class="mb-3">
-                                <label for="especialidad-cita" class="form-label">Especialidad</label>
-                                <select id="especialidad-cita" class="form-select" required>
-                                    <option value="">Selecciona una especialidad</option>
-                                    <option value="Nefrología">Nefrología</option>
-                                    <option value="Medicina Interna / Salud Metabólica">Medicina Interna / Salud Metabólica</option>
-                                </select>
-                            </div>
-
-                            <div class="mb-4">
-                                <label for="ubicacion-cita" class="form-label">Ubicación</label>
-                                <select id="ubicacion-cita" class="form-select" required>
-                                    <option value="">Selecciona una ubicación</option>
-                                    <option value="Sucursal Centro">Sucursal Centro</option>
-                                    <option value="Sucursal Norte">Sucursal Norte</option>
-                                    <option value="Sucursal Sur">Sucursal Sur</option>
-                                </select>
-                            </div>
-
-                            <a id="btn-agendar" class="btn-main fx-slide w-100 text-center" href="#" target="_blank" rel="noopener"><span>Agendar cita</span></a>
-                            <p class="small text-muted mt-3"><em>Serás redirigido a nuestro sistema de citas para confirmar disponibilidad.</em></p>
                         </div>
-                        
+
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-12 text-center">
+                            <p class="small text-muted"><em>Serás redirigido a Doctoralia, nuestro sistema de gestión de citas.</em></p>
+                        </div>
                     </div>
                 </div>
             </section>
