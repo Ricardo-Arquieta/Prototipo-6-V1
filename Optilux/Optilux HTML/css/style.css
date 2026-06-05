@@ -14160,6 +14160,13 @@ footer .id-color {
     background-color: #3b5998 !important;
 }
 
+.glass-card .btn-main:hover {
+    background-color: #4d6fa8 !important;
+}
+.glass-card .btn-main:active {
+    background-color: #3b5998 !important;
+}
+
 /* ====== TOOLTIP "SOLICITAR INFORMACIÓN" EN BOTÓN DE WHATSAPP ====== */
 #whatsapp-float::after {
     content: "Solicitar información";
@@ -14198,12 +14205,21 @@ footer .id-color {
     justify-content: center;
     overflow: hidden;
     filter: grayscale(100%);
-    transition: filter 0.4s ease;
+    transition: all 0.4s ease;
 }
 
 /* Efecto hover: recupera el color y añade tinte primario */
 .specialist-card:hover {
-    filter: grayscale(0%) sepia(30%) hue-rotate(180deg) saturate(50%);
+    filter: grayscale(0%);
+}
+
+.specialist-card-overlay {
+    background: transparent;
+    transition: background 0.4s ease;
+}
+
+.specialist-card:hover .specialist-card-overlay {
+    background: rgba(107, 144, 203, 0.35);
 }
 
 /* Capa de superposición sutil */
@@ -14258,6 +14274,11 @@ footer .id-color {
     font-size: 15px;
     color: #2c2c2c;
     line-height: 1.6;
+}
+
+/* Ajustar posición de la imagen de fondo */
+.specialist-card {
+    background-position: center top;   /* Muestra la parte superior de la imagen (el rostro) */
 }
 
 /* Ajuste para móviles */
