@@ -14204,7 +14204,7 @@ footer .id-color {
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    filter: grayscale(100%);
+    filter: grayscale(60%);
     transition: all 0.4s ease;
 }
 
