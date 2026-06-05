@@ -14204,7 +14204,7 @@ footer .id-color {
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    filter: grayscale(60%);
+    filter: grayscale(50%);
     transition: all 0.4s ease;
 }
 
@@ -14290,4 +14290,13 @@ footer .id-color {
         width: 90%;
         padding: 25px 20px;
     }
+}
+
+/* Ajustar posición de la imagen de la doctora en el avatar */
+#avatar-doctora {
+  object-position: center 5% !important;
+    object-fit: cover !important;
+    width: 100% !important;
+    height: 100% !important;
+    display: block; /* Mueve la imagen hacia abajo para mostrar el rostro */
 }
