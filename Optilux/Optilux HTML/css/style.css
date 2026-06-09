@@ -14302,6 +14302,11 @@ footer .id-color {
 }
 
 /* ====== AGRANDAR ICONOS DE REDES SOCIALES EN EL FOOTER ====== */
+footer .social-icons {
+    display: flex;
+    gap: 20px;              /* Espaciado uniforme entre iconos. Ajuste el valor a su gusto */
+}
+
 footer .social-icons i {
     font-size: 2rem;   /* Tamaño base aumentado. Ajuste este valor si lo quiere más grande o más pequeño */
 }
