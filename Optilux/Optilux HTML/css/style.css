@@ -13944,16 +13944,21 @@ img {
 
 /* ====== IMAGEN DOCTORA (Cuadro 1) ====== */
 #conocenos .img-doctora-container {
-    width: 250px;              /* Ancho fijo deseado */
-    height: 450px;             /* Alto fijo deseado */
+    width: 500px;              /* Ancho fijo deseado */
+    height: 410px;             /* Alto fijo deseado */
     max-width: 100%;           /* Para que no se desborde en móviles */
     margin: 0 auto;            /* Centrado */
 }
 
+/* Ajustar la posición de la imagen para que se vea el rostro */
+#conocenos .img-doctora-container img {
+    object-position: center top;
+}
+
 /* ====== IMAGEN DOCTOR (Cuadro 4) ====== */
 #conocenos .img-doctor-container {
-    width: 400px;              /* Ancho fijo deseado */
-    height: 400px;             /* Alto fijo deseado */
+    width: 500px;              /* Ancho fijo deseado */
+    height: 410px;             /* Alto fijo deseado */
     max-width: 100%;
     margin: 0 auto;
 }
