@@ -14300,3 +14300,8 @@ footer .id-color {
     height: 100% !important;
     display: block; /* Mueve la imagen hacia abajo para mostrar el rostro */
 }
+
+/* ====== AGRANDAR ICONOS DE REDES SOCIALES EN EL FOOTER ====== */
+footer .social-icons i {
+    font-size: 1.5rem;   /* Tamaño base aumentado. Ajuste este valor si lo quiere más grande o más pequeño */
+}
