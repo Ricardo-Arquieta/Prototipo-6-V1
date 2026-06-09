@@ -363,6 +363,26 @@
     <script src="js/plugins.js"></script>
     <script src="js/designesia.js"></script>
 
+    <!-- ====== MENÚ MÓVIL DE EMERGENCIA ====== -->
+    <script>
+        (function() {
+            var btn = document.getElementById('menu-btn');
+            if (btn) {
+                btn.style.display = 'block';
+                btn.style.cursor = 'pointer';
+                btn.innerHTML = '<i class="fa fa-bars"></i>';
+
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    var header = document.querySelector('header');
+                    if (header) {
+                        header.classList.toggle('menu-open');
+                    }
+                });
+            }
+        })();
+    </script>
+
 </body>
 
 </html>
