@@ -13944,16 +13944,21 @@ img {
 
 /* ====== IMAGEN DOCTORA (Cuadro 1) ====== */
 #conocenos .img-doctora-container {
-    width: 250px;              /* Ancho fijo deseado */
-    height: 450px;             /* Alto fijo deseado */
+    width: 500px;              /* Ancho fijo deseado */
+    height: 410px;             /* Alto fijo deseado */
     max-width: 100%;           /* Para que no se desborde en móviles */
     margin: 0 auto;            /* Centrado */
 }
 
+/* Ajustar la posición de la imagen para que se vea el rostro */
+#conocenos .img-doctora-container img {
+    object-position: center top;
+}
+
 /* ====== IMAGEN DOCTOR (Cuadro 4) ====== */
 #conocenos .img-doctor-container {
-    width: 400px;              /* Ancho fijo deseado */
-    height: 400px;             /* Alto fijo deseado */
+    width: 500px;              /* Ancho fijo deseado */
+    height: 410px;             /* Alto fijo deseado */
     max-width: 100%;
     margin: 0 auto;
 }
@@ -14299,4 +14304,14 @@ footer .id-color {
     width: 100% !important;
     height: 100% !important;
     display: block; /* Mueve la imagen hacia abajo para mostrar el rostro */
+}
+
+/* ====== AGRANDAR ICONOS DE REDES SOCIALES EN EL FOOTER ====== */
+footer .social-icons {
+    display: flex;
+    gap: 20px;              /* Espaciado uniforme entre iconos. Ajuste el valor a su gusto */
+}
+
+footer .social-icons i {
+    font-size: 2rem;   /* Tamaño base aumentado. Ajuste este valor si lo quiere más grande o más pequeño */
 }
