@@ -356,20 +356,20 @@
     <script src="js/plugins.js"></script>
     <script src="js/designesia.js"></script>
 
-    <!-- ====== MENÚ MÓVIL DE EMERGENCIA ====== -->
+    <!-- ====== ACTIVACIÓN DEL MENÚ MÓVIL (SOLO PARA PÁGINAS EXTERNAS) ====== -->
     <script>
         (function() {
             var btn = document.getElementById('menu-btn');
-            if (btn) {
-                btn.style.display = 'block';
-                btn.style.cursor = 'pointer';
-                btn.innerHTML = '<i class="fa fa-bars"></i>';
+            var header = document.querySelector('header');
 
-                btn.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    var header = document.querySelector('header');
-                    if (header) {
-                        header.classList.toggle('menu-open');
+            if (btn && header) {
+                btn.addEventListener('click', function() {
+                    if (header.classList.contains('menu-open')) {
+                        header.classList.remove('menu-open');
+                        btn.classList.remove('menu-open');
+                    } else {
+                        header.classList.add('menu-open');
+                        btn.classList.add('menu-open');
                     }
                 });
             }
