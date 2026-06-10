@@ -51,21 +51,22 @@
                                 </div>
 
                                 <div class="de-flex-col">
-                                    <div class="de-flex-col header-col-mid">
-                                        <ul id="mainmenu">
-                                            <li><a class="menu-item" href="index.html#top">Inicio</a></li>
-                                            <li><a class="menu-item" href="index.html#sobre-nosotros">Sobre nosotros</a></li>
-                                            <li><a class="menu-item" href="index.html#conocenos">Conócenos</a></li>
-                                            <li><a class="menu-item" href="index.html#servicios">Nuestros Servicios</a></li>
-                                            <li><a class="menu-item" href="index.html#consulta">Tu consulta</a></li>
-                                            <li><a class="menu-item" href="#">Información</a>
+                                    <div class="mobile-menu-fix">
+                                    <!-- Aquí pega el menú copiado -->
+                                    <ul id="mainmenu">
+                                            <li><a class="menu-item" href="#top">Inicio</a></li>
+                                            <li><a class="menu-item" href="#sobre-nosotros">Sobre nosotros</a></li>
+                                            <li><a class="menu-item" href="#conocenos">Conócenos</a></li>
+                                            <li><a class="menu-item" href="#servicios">Nuestros Servicios</a></li>
+                                            <li><a class="menu-item" href="#consulta">Tu consulta</a></li>
+                                            <li class="menu-item-has-children has-child"><a class="menu-item" href="#">Información</a><span></span>
                                                 <ul>
                                                     <li><a href="salud-metabolica.html">Salud Metabólica</a></li>
                                                     <li><a href="salud-renal.html">Salud Renal</a></li>
                                                     <li><a href="Avisos.html">Avisos</a></li>
                                                 </ul>
                                             </li>
-                                            <li><a class="menu-item" href="index.html#contacto">Contacto</a></li>
+                                            <li><a class="menu-item" href="#contacto">Contacto</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -73,7 +74,12 @@
                                 <div class="de-flex-col">
                                     <a class="btn-main fx-slide" href="index.html#agendar-cita"><span>Agenda tu Cita</span></a>
                                     <div class="menu_side_area">
-                                        <span id="menu-btn"></span>
+                                        <span id="menu-btn" style="display:none;"></span>
+                                        <a href="index.html" id="home-btn-mobile" style="display:none; text-decoration:none;        line-height:1;">
+                                            <svg width="24" height="24" viewBox="0 0 576 512" fill="#6b90cb" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M575.8 255.5c0 18-15 32.1-32 32.1h-32l.7 160.2c0 2.7-.2 5.4-.5 8.1V472c0 22.1-17.9 40-40 40h-16c-1.1 0-2.2-.9-2.2-2.2V384H128v126c0 1.1-.9 2-2 2h-16c-22.1 0-40-17.9-40-40v-14.3c-.3-2.7-.5-5.4-.5-8.1V287.6H32.05c-18 0-32.05-14.1-32.05-32.1 0-9.6 3.6-18.3 10.1-24.8L266.4 8c7-7 18.3-7 25.3 0L558.6 230.7c6.5 6.5 10.1 15.2 10.1 24.8z"/>
+                                            </svg>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -356,26 +362,24 @@
     <script src="js/plugins.js"></script>
     <script src="js/designesia.js"></script>
 
-    <!-- ====== MENÚ MÓVIL DE EMERGENCIA ====== -->
     <script>
         (function() {
             var btn = document.getElementById('menu-btn');
-            if (btn) {
-                btn.style.display = 'block';
-                btn.style.cursor = 'pointer';
-                btn.innerHTML = '<i class="fa fa-bars"></i>';
+            var menu = document.getElementById('mainmenu');
+            if (!btn || !menu) return;
 
-                btn.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    var header = document.querySelector('header');
-                    if (header) {
-                        header.classList.toggle('menu-open');
-                    }
-                });
+            btn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            if (menu.classList.contains('menu-visible')) {
+                menu.classList.remove('menu-visible');
+            } else {
+                menu.classList.add('menu-visible');
             }
+            });
         })();
     </script>
 
+    
 </body>
 
 </html>

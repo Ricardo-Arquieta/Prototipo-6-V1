@@ -48,3 +48,26 @@ body.internal header {
     transform: translateY(-3px);
     box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
 }
+
+/* ====== ICONO DE HOME EN PÁGINAS EXTERNAS ====== */
+body.internal .header-inner .de-flex-col:last-child a[href="index.html"] {
+    display: none; /* Oculto en escritorio */
+}
+
+@media (max-width: 992px) {
+    body.internal .header-inner .de-flex-col:last-child a[href="index.html"] {
+        display: inline-block;
+        margin-left: 10px;
+    }
+}
+
+/* ====== ICONO DE HOME EN MÓVIL ====== */
+@media (max-width: 992px) {
+    #menu-btn {
+        display: none !important;
+    }
+    #home-btn-mobile {
+        display: inline-block !important;
+        margin-left: 15px;
+    }
+}
