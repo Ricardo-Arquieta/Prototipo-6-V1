@@ -51,21 +51,22 @@
                                 </div>
 
                                 <div class="de-flex-col">
-                                    <div class="de-flex-col header-col-mid">
-                                        <ul id="mainmenu">
-                                            <li><a class="menu-item" href="index.html#top">Inicio</a></li>
-                                            <li><a class="menu-item" href="index.html#sobre-nosotros">Sobre nosotros</a></li>
-                                            <li><a class="menu-item" href="index.html#conocenos">Conócenos</a></li>
-                                            <li><a class="menu-item" href="index.html#servicios">Nuestros Servicios</a></li>
-                                            <li><a class="menu-item" href="index.html#consulta">Tu consulta</a></li>
-                                            <li><a class="menu-item" href="#">Información</a>
+                                    <div class="mobile-menu-fix">
+                                    <!-- Aquí pega el menú copiado -->
+                                    <ul id="mainmenu">
+                                            <li><a class="menu-item" href="#top">Inicio</a></li>
+                                            <li><a class="menu-item" href="#sobre-nosotros">Sobre nosotros</a></li>
+                                            <li><a class="menu-item" href="#conocenos">Conócenos</a></li>
+                                            <li><a class="menu-item" href="#servicios">Nuestros Servicios</a></li>
+                                            <li><a class="menu-item" href="#consulta">Tu consulta</a></li>
+                                            <li class="menu-item-has-children has-child"><a class="menu-item" href="#">Información</a><span></span>
                                                 <ul>
                                                     <li><a href="salud-metabolica.html">Salud Metabólica</a></li>
                                                     <li><a href="salud-renal.html">Salud Renal</a></li>
                                                     <li><a href="Avisos.html">Avisos</a></li>
                                                 </ul>
                                             </li>
-                                            <li><a class="menu-item" href="index.html#contacto">Contacto</a></li>
+                                            <li><a class="menu-item" href="#contacto">Contacto</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -73,7 +74,8 @@
                                 <div class="de-flex-col">
                                     <a class="btn-main fx-slide" href="index.html#agendar-cita"><span>Agenda tu Cita</span></a>
                                     <div class="menu_side_area">
-                                        <span id="menu-btn"></span>
+                                        <span id="menu-btn" style="display:none;"></span>
+                                        <a href="index.html" id="home-btn-mobile" style="display:none; font-size:24px; color:#333; text-decoration:none; line-height:1;">🏠</a>
                                     </div>
                                 </div>
                             </div>
@@ -356,26 +358,24 @@
     <script src="js/plugins.js"></script>
     <script src="js/designesia.js"></script>
 
-    <!-- ====== ACTIVACIÓN DEL MENÚ MÓVIL (SOLO PARA PÁGINAS EXTERNAS) ====== -->
     <script>
         (function() {
             var btn = document.getElementById('menu-btn');
-            var header = document.querySelector('header');
+            var menu = document.getElementById('mainmenu');
+            if (!btn || !menu) return;
 
-            if (btn && header) {
-                btn.addEventListener('click', function() {
-                    if (header.classList.contains('menu-open')) {
-                        header.classList.remove('menu-open');
-                        btn.classList.remove('menu-open');
-                    } else {
-                        header.classList.add('menu-open');
-                        btn.classList.add('menu-open');
-                    }
-                });
+            btn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            if (menu.classList.contains('menu-visible')) {
+                menu.classList.remove('menu-visible');
+            } else {
+                menu.classList.add('menu-visible');
             }
+            });
         })();
     </script>
 
+    
 </body>
 
 </html>
